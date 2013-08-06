@@ -1,0 +1,11 @@
+# https://gist.github.com/runeleaf/5898426
+- hosts: develop
+  user: kawashima
+  sudo: yes
+  tasks:
+    - name: nginx install
+      yum: name=nginx state=installed
+    - name: copy nginx.conf
+      template: src=centos/conf/nginx.conf.j2 dest=/etc/nginx/nginx.conf
+      notify:
+        - restart nginx

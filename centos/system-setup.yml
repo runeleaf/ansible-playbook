@@ -1,0 +1,18 @@
+# sshd_config
+#   port: 60022
+#   PasswordAuthentication no
+# /etc/sysconfig/iptables
+# service iptables restart
+# /etc/sysconfig/network
+# /etc/sysconfig/network-script/ifcfg-eth0
+# /etc/hosts
+# /etc/resolv.conf
+# useradd kawashima
+# visudo kawashima
+# cp /home/kawashima/.ssh/authorized_keys2
+# service sshd restart
+#- name: selinux setup disabled
+#      selinux: state=disabled
+    - name: swallow user enabled
+      user: name=swallow system=yes
+
