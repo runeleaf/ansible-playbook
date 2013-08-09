@@ -1,0 +1,3 @@
+# file: roles/varnish/vars/main.yml
+url: http://repo.varnish-cache.org/source/varnish-3.0.3.tar.gz
+path: /usr/local/src/varnish-3.0.3

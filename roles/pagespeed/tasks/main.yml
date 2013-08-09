@@ -1,0 +1,12 @@
+# file: roles/pagespeed/tasks/main.yml
+- name: state directory
+  file: state=directory path=/usr/local/src
+
+- name: clone pagespeed
+  command: git clone $clone_url
+
+- name: ngx_pagespeed download
+  get_url: url=$url dest=$path
+
+- name: ngx_pagespeed extracted
+  command: tar zxf 1.5.27.3.tar.gz chdir=$path

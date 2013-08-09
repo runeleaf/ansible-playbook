@@ -1,3 +1,4 @@
+# file: roles/system/tasks/main.yml
 # sshd_config
 #   port: 60022
 #   PasswordAuthentication no
@@ -13,6 +14,6 @@
 # service sshd restart
 #- name: selinux setup disabled
 #      selinux: state=disabled
-    - name: swallow user enabled
-      user: name=swallow system=yes
 
+- name: swallow user enabled
+  user: name=swallow system=yes

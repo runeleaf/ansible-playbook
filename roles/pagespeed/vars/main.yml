@@ -1,0 +1,4 @@
+# file: roles/pagespeed/vars/main.yml
+clone_url: https://github.com/pagespeed/ngx_pagespeed.git
+url: https://dl.google.com/dl/page-speed/psol/1.5.27.3.tar.gz
+path: /usr/local/src/ngx_pagespeed

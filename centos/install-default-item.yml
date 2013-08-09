@@ -1,5 +1,0 @@
-# default packages
-# TODO: dependencies conflict
-    - name: add munin-node
-      yum: name=munin-node state=installed
-
