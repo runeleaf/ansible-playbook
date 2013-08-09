@@ -39,6 +39,7 @@
         - ncurses-devel
         - pcre-devel
         - gd-devel
+        - bind-utils
         - yum-plugin-replace
 # TODO: yum replace creates check
 #    - name: replace openssl
