@@ -6,6 +6,6 @@ http://www.ansibleworks.com/docs/bestpractices.html
 * nginx
 * pagespeed
 * ruby
-** rails
-** passenger
+  * rails
+  * passenger
 * varnish
