@@ -5,9 +5,6 @@
 - name: add epel
   command: rpm --force -Uvh http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm
 
-- name: add ius
-  command: rpm --force -Uvh http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/ius-release-1.0-11.ius.el6.noarch.rpm
-
 - name: add remi
   command: rpm --force -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
@@ -45,11 +42,4 @@
     - pcre-devel
     - gd-devel
     - bind-utils
-    - yum-plugin-replace
-
-- name: replace openssl
-  command: yum -y replace openssl --replace-with=openssl10
-
-- name: add munin-node
-  yum: name=munin-node state=installed
 
