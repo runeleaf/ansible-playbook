@@ -3,19 +3,19 @@
   file: state=directory path=/usr/local/src
 
 - name: ruby download
-  get_url: url=$url dest=/usr/local/src
+  get_url: url=$ruby_url dest=/usr/local/src
 
 - name: ruby extracted
-  command: tar zxf ruby-2.0.0-p247.tar.gz chdir=/usr/local/src creates=$path
+  command: tar zxf $ruby_version.tar.gz chdir=/usr/local/src creates=$ruby_path
 
 - name: ruby configured
-  command: ./configure chdir=$path creates=$path/Makefile
+  command: ./configure chdir=$ruby_path creates=$ruby_path/Makefile
 
 - name: ruby compiled
-  command: make chdir=$path creates=$path/ruby
+  command: make chdir=$ruby_path creates=$ruby_path/ruby
 
 - name: ruby install
-  command: make install chdir=$path creates=/usr/local/bin/ruby
+  command: make install chdir=$ruby_path creates=/usr/local/bin/ruby
 
 - name: gem install
   command: /usr/local/bin/gem install {{ item }}
@@ -23,3 +23,4 @@
     - bundler
     - passenger
     - capistrano
+    - puma

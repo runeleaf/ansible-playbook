@@ -1,3 +1,4 @@
 # file: roles/ruby/vars/main.yml
-url: ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p247.tar.gz
-path: /usr/local/src/ruby-2.0.0-p247
+ruby_version: ruby-2.0.0-p247
+ruby_url: ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p247.tar.gz
+ruby_path: /usr/local/src/ruby-2.0.0-p247

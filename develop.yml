@@ -1,6 +1,6 @@
 # file: develop.yml
 - hosts: develop
-  user: vagrant
+  user: develop
   sudo: yes
   roles:
     - common
