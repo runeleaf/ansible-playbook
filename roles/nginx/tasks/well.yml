@@ -1,0 +1,25 @@
+# file: roles/nginx/tasks/enhanced.yml
+- name: state directory
+  file: state=directory path=/usr/local/src
+
+- name: nginx download
+  get_url: url=$nginx_src_url dest=/usr/local/src
+
+- name: nginx extracted
+  command: tar zxf nginx-1.5.0.tar.gz chdir=/usr/local/src creates=$nginx_src_path
+
+- name: configure nginx passenger
+  command: 'passenger-install-nginx-module --auto --prefix=/usr/local/nginx --nginx-source-dir=/usr/local/src/nginx-1.5.0 --extra-configure-flags=" --prefix=/usr/local/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --pid-path=/var/run/nginx.pid --http-log-path=/var/log/nginx/access.log --with-http_ssl_module --with-http_spdy_module --add-module=/usr/local/src/ngx_pagespeed "'
+
+- name: add service nginx
+  template: src=roles/nginx/templates/nginx.j2 dest=/etc/init.d/nginx mode=0755 owner=root group=root
+
+- name: add conf nginx
+  template: src=roles/nginx/templates/nginx.conf.j2 dest=/etc/nginx/nginx.conf
+
+- name: add virtual host conf nginx
+  template: src=roles/nginx/templates/vhost.conf.j2 dest=/etc/nginx/conf.d/nginx.conf
+
+- name: restart nginx
+  service: name=nginx state=running enabled=yes
+

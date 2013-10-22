@@ -1,0 +1,5 @@
+- name: freetds install
+  yum: name=freetds-devel state=installed
+
+- name: unixODBC install
+  yum: name=unixODBC-devel state=installed

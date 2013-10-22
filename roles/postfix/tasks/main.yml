@@ -1,0 +1,6 @@
+# file: roles/postfix/tasks/main.yml
+- name: postfix install
+  yum: name=postfix state=installed
+
+- name: postfix is runnning and enabled
+  service: name=postfix state=running enabled=yes

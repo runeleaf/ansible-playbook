@@ -1,0 +1,27 @@
+server {
+    listen       80;
+    server_name  develop.raw-hide.jp;
+
+    #pagespeed on;
+    #pagespeed RewriteLevel CoreFilters;
+    #pagespeed FileCachePath /var/cache/ngx_pagespeed_cache;
+    #pagespeed EnableFilters collapse_whitespace,add_instrumentation,remove_comments;
+
+    access_log  /var/log/nginx/develop.raw-hide.jp.access.log  main;
+    error_log  /var/log/nginx/develop.raw-hide.jp.error.log;
+
+    gzip on;
+    gzip_http_version 1.0;
+    gzip_vary on;
+    gzip_comp_level 6;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_disable "MSIE 6\."; # IE6 has gzip problem
+    add_header Cache-Control "public, max-age=43200";
+    proxy_hide_header X-Powered-By;
+
+    location / {
+        root   /var/www/vhost/develop/current/public;
+        passenger_enabled on;
+        rails_env production;
+    }
+}

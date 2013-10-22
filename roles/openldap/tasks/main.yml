@@ -1,0 +1,5 @@
+- name: OpenLDAP install
+  yum: name=openldap-devel state=installed
+
+- name: OpenLDAP Client install
+  yum: name=openldap-clients state=installed
