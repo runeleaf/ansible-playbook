@@ -1,0 +1,12 @@
+# file: roles/postgresql/tasks/main.yml
+- name: postgresql-server install
+  yum: name={{ item }} state=installed
+  with_items:
+    - postgresql92-devel
+    - postgresql92-libs
+    - postgresql92-server
+    - postgresql92
+
+- name: postgresql is running and enabled
+  service: name=postgresql-9.2 state=running enabled=yes
+
