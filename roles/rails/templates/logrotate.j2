@@ -3,6 +3,6 @@
   rotate 4
   sharedscripts
   postrotate
-      find /var/www/vhost/*/current/tmp/restart.txt | xargs touch
+      find /var/www/vhost/*/current -type d -name tmp | xargs -i touch '{}'/restart.txt
   endscript
 }
