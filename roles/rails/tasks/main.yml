@@ -1,0 +1,7 @@
+# file: roles/rails/tasks/main.yml
+
+- name: mkdir vhost
+  file: dest=/var/www/vhost state=directory
+
+- name: copy logrotate conf
+  template: src=roles/rails/templates/logrotate.j2 dest=/etc/logrotate.d/rails

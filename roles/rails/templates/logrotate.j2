@@ -1,0 +1,8 @@
+/var/www/vhost/*/current/log/*log {
+  weekly
+  rotate 4
+  sharedscripts
+  postrotate
+      find /var/www/vhost/*/current/tmp/restart.txt | xargs touch
+  endscript
+}
