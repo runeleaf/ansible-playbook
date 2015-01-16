@@ -1,0 +1,12 @@
+# file: roles/rbenv/tasks/main.yml
+- name: rbenv state directory
+  file: state=directory path=/usr/local
+
+- name: rbenv extracted
+  command: git clone https://github.com/sstephenson/rbenv.git /usr/local/rbenv chdir=/usr/local creates=/usr/local/rbenv
+
+- name: ruby-build extracted
+  command: git clone https://github.com/sstephenson/ruby-build.git /usr/local/rbenv/plugins/ruby-build chdir=/usr/local creates=/usr/local/rbenv/plugins/ruby-build
+
+- name: copy rbenv.sh
+  template: src=roles/rbenv/templates/rbenv.sh.j2 dest=/etc/profile.d/rbenv.sh
