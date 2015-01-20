@@ -6,10 +6,10 @@ http://www.ansibleworks.com/docs/bestpractices.html
 * nginx
 * pagespeed
 * ruby
-  * rails
-  * passenger
+* rails(init)
 * varnish
 * rbenv
+* postgresql
 
 ## usage:
 
@@ -36,6 +36,6 @@ http://runeleaf.wordpress.com/2013/08/06/ansible-on-osx/
  > source ansible-env/bin/activate
  > cd ansible-playbook
  > git checkout works origin/centos-6-4-ruby-2
- (ansible-env)> ansible-playbook develop.yml -K -v
+ (ansible-env)> ansible-playbook testserver.yml -K -vvvv -i develop
 ```
 

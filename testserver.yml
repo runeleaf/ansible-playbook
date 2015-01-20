@@ -1,0 +1,11 @@
+# file: develop.yml
+- hosts: develop
+  user: kawashima
+  sudo: yes
+  roles:
+    - common
+    - ruby
+    - rbenv
+    - rails
+    - nginx
+    - mysql

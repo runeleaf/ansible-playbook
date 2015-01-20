@@ -3,7 +3,7 @@
   yum: name=mysql-server state=installed
 
 - name: copy my.conf
-  template: src=roles/mysql/templates/my.conf.j2 dest=/etc/my.conf
+  template: src=roles/mysql/templates/my.cnf.j2 dest=/etc/my.cnf
   notify:
     - restart mysqld
 
