@@ -24,6 +24,8 @@
       - mysql
       - mongodb
       - postgres
+      - wget
+      - elixir
     homebrew_cask_repositories:
       - caskroom/versions
     homebrew_cask_packages:

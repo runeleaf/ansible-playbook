@@ -1,1 +1,17 @@
 for mac
+
+1.  xcode install
+2.  homebrew install
+  1.  $ xcode-select --install
+  2.  $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  3.  $ brew update
+  4.  $ brew install ansible
+  5.  $ brew install git
+3.  $ mkdir ~/.provisioning
+4.  $ cd ~/.porivisioning
+5.  $ git clone -b osx-10-10 https://github.com/runeleaf/ansible-playbook.git .
+6.  $ echo 'export HOMEBREW_GITHUB_API_TOKEN=xxxxxxx' >> ~/.bash_profile
+7.  $ echo 'export HOMEBREW_CASK_OPTS="--appdir=/Applications"' >> ~/.bash_profile
+8.  $ source ~/.bash_profile
+9.  $ ansible-playbook -i hosts develop.yml
+
