@@ -32,6 +32,7 @@
       - name: vim
         install_options:
           - with-lua
+      - mercurial
     homebrew_cask_repositories:
       - caskroom/versions
     homebrew_cask_packages:
