@@ -26,6 +26,8 @@
       - postgres
       - wget
       - elixir
+      - ngircd
+      - weechat
     homebrew_cask_repositories:
       - caskroom/versions
     homebrew_cask_packages:
