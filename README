@@ -14,4 +14,7 @@ for mac
 7.  $ echo 'export HOMEBREW_CASK_OPTS="--appdir=/Applications"' >> ~/.bash_profile
 8.  $ source ~/.bash_profile
 9.  $ ansible-playbook -i hosts develop.yml
-
+10.  zsh settings
+  1.  $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+11. font settins
+  1.  open http://blog.pg1x.com/entry/2014/08/10/025902-mac-iterm2-and-powerline
