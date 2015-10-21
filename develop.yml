@@ -37,6 +37,8 @@
         install_options:
           - with-python
       - graphviz
+      - redis
+      - elasticsearch
     homebrew_cask_repositories:
       - caskroom/versions
     homebrew_cask_packages:
@@ -51,3 +53,4 @@
       - vagrant
       - virtualbox
       - skype
+      - java7
