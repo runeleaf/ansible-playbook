@@ -31,3 +31,13 @@
 
 - name: set_rbenv_env_file
   copy: src=roles/docker/templates/rbenv.sh dest=/etc/profile.d mode=0775
+
+- name: elasticsearch_gpg_key
+  command: /bin/rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+
+- name: elasticsearch_repo_file
+  copy: src=roles/docker/templates/elasticsearch.repo dest=/etc/yum.repos.d
+ 
+- name: elasticsearch_install
+  yum: name=elasticsearch state=latest
+
