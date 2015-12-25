@@ -19,6 +19,9 @@
     - postgresql-server
     - redis
     - java-1.7.0-openjdk
+    - sqlite-devel
+    - libxml2-devel
+    - libxslt-devel
 
 - name: rbenv_install
   git: repo=https://github.com/sstephenson/rbenv.git dest={{ rbenv_root }}
