@@ -16,6 +16,9 @@
     - git
     - vim
     - cloud-init
+    - postgresql-server
+    - redis
+    - java-1.7.0-openjdk
 
 - name: rbenv_install
   git: repo=https://github.com/sstephenson/rbenv.git dest={{ rbenv_root }}
