@@ -1,19 +1,6 @@
 # file: develop.yml
 - hosts: develop
-  user: kawashima
+  user: swallow
   sudo: yes
   roles:
-    - common
-    - system
-    - ruby
-    - varnish
-
-#- include: centos/system-setup.yml
-#- include: centos/install-common-item.yml
-#- include: centos/install-default-item.yml
-#- include: centos/install-ruby.yml
-#- include: centos/install-varnish.yml
-#- include: centos/install-pagespeed.yml
-#- include: centos/install-nginx-default.yml
-#- include: centos/install-nginx-enhanced.yml
-#- include: centos/install-mysql.yml
+    - docker

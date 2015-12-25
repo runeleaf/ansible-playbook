@@ -1,0 +1,32 @@
+---
+vars:
+  rbenv_root: /usr/local/rbenv
+
+tasks:
+  - name: yum_update
+    yum: name=* state=latest
+
+  - name: yum_install
+    yum: name={{ item }} state=latest
+    with_items:
+      - epel-release
+      - zlib-devel
+      - zsh
+      - make
+      - gcc
+      - gcc-c++
+      - openssl-devel
+      - readline-devel
+      - net-tools
+      - git
+      - vim
+      - cloud-init
+
+  - name: rbenv_install
+    git: repo=https://github.com/sstephenson/rbenv.git dest={{ rbenv_root }}
+
+  - name: ruby-build_install
+    git: repo=https://github.com/sstephenson/ruby-build.git dest={{ rbenv_root }}/plugins/ruby-build
+
+  - name: set_rbenv_env_file
+    copy: src=roles/docker/templates/rbenv.sh dest=/etc/profile.d mode=0775
