@@ -1,6 +1,5 @@
 # file: develop.yml
-- hosts: develop
-  user: swallow
-  sudo: yes
+- hosts: 127.0.0.1
+  connection: local
   roles:
     - docker
