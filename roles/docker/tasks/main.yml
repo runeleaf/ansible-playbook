@@ -16,12 +16,17 @@
     - git
     - vim
     - cloud-init
+    - colud-utils
     - postgresql-server
     - redis
     - java-1.7.0-openjdk
     - sqlite-devel
     - libxml2-devel
     - libxslt-devel
+    - libffi-devel
+    - libyaml-devel
+    - gdbm-devel
+    - ncurses-devel
 
 - name: rbenv_install
   git: repo=https://github.com/sstephenson/rbenv.git dest={{ rbenv_root }}
