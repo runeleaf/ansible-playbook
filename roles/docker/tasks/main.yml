@@ -6,6 +6,7 @@
   with_items:
     - epel-release
     - zlib-devel
+    - bzip2
     - zsh
     - make
     - gcc
