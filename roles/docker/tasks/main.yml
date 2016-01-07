@@ -11,14 +11,14 @@
     - gcc
     - gcc-c++
     - openssl-devel
+    - openssh-server
     - readline-devel
     - net-tools
+    - bind-utils
     - git
     - vim
     - cloud-init
-    - colud-utils
-    - postgresql-server
-    - redis
+    - cloud-utils
     - java-1.7.0-openjdk
     - sqlite-devel
     - libxml2-devel
@@ -27,6 +27,7 @@
     - libyaml-devel
     - gdbm-devel
     - ncurses-devel
+    - ImageMagick
 
 - name: rbenv_install
   git: repo=https://github.com/sstephenson/rbenv.git dest={{ rbenv_root }}
@@ -36,13 +37,4 @@
 
 - name: set_rbenv_env_file
   copy: src=roles/docker/templates/rbenv.sh dest=/etc/profile.d mode=0775
-
-- name: elasticsearch_gpg_key
-  command: /bin/rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
-
-- name: elasticsearch_repo_file
-  copy: src=roles/docker/templates/elasticsearch.repo dest=/etc/yum.repos.d
- 
-- name: elasticsearch_install
-  yum: name=elasticsearch state=latest
 
